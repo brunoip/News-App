@@ -1,0 +1,26 @@
+<div class="main">
+  <div class="form-group mb-4">
+    <input class="searchInput" type="text" [(ngModel)]="searchText" placeholder={{this.constants.search}}>
+  </div>
+
+  <div *ngIf="!isDataLoaded" class="loading">{{this.constants.loading}}</div>
+  <div *ngIf="errorDetected && isDataLoaded" class="error">{{this.constants.error}}</div>
+  <div class="list" *ngIf="(list | filter: searchText).length > 0; else noResults">
+    <mat-list>
+      <mat-list-item 
+      routerLink="['/home2']" 
+      (click)="[onRowClicked(article)]"
+      routerLinkActive='active'
+      *ngFor="let article of list | filter: searchText" role="listitem"
+      > 
+          <mat-icon class="material-icons color_green" matListItemIcon>{{iconList.get(article.type)}}</mat-icon>
+            <div class="itemTitle" matListItemTitle>{{article.title}}</div>
+            <div class="itemBy" matListItemLine>by {{article.by}}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <ng-template #noResults >
+    <p class="noresult" *ngIf="isDataLoaded && !this.errorDetected">{{this.constants.emptyList}} "{{searchText}}".</p>
+  </ng-template>
+
+</div>

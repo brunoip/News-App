@@ -1,0 +1,90 @@
+
+.mat-mdc-list-item:hover{
+    background-color:rgb(205, 205, 205);
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+.material-icons.color_green { 
+    color: #ffffff;     
+    background-color: #5acfc9;
+    font-size: 32px;
+    width: fit-content;
+    height: fit-content;
+    padding: 8px;   
+    margin-right: 12px;
+    margin-left: 0px; 
+}
+
+.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__start {
+    align-self: flex-start;
+    margin-top: 0px;
+}
+
+.mat-mdc-list-item:not(.mat-mdc-list-item-interactive) {
+    cursor: pointer;
+    height: fit-content;
+    margin-bottom: 8px;
+}
+
+.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text {
+    display: block;
+    line-height: normal;
+    margin-top: -12px;
+}
+
+.mat-list-item.active{
+    color: red;
+  }
+
+.itemTitle{
+    color:rgb(0, 0, 0)
+}
+.itemDescription{
+    color:rgb(0, 0, 0)
+}
+
+.itemBy{
+    color:rgb(128, 128, 128)
+}
+
+.material-icons.color_white { color: #FFFFFF; }
+
+.main{
+    flex: 1;
+    overflow: hidden;
+    display: block;
+    min-height: 240px;
+    margin: 0px;
+    padding: 8px;
+    background-color: #efefef;
+}
+
+.searchInput{
+    font-size: 16px;
+    padding: 2px 8px 2px 8px;
+    margin-top: 8px;
+}
+
+.list{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.error, .noresult, .loading {
+    margin-top: 12px;
+    font-weight: bold;
+    display:inline-block;
+    font-family: monospace;
+    font-size: 18px;
+  }
+
+.loading {
+    clip-path: inset(0 3ch 0 0);
+    animation: l 1s steps(4) infinite;
+  }
+  
+  @keyframes l {
+    to {
+      clip-path: inset(0 -1ch 0 0)
+    }
+  }

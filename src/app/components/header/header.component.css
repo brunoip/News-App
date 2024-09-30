@@ -1,0 +1,11 @@
+.container {
+    padding: 8px 24px 8px 24px;
+    color: #405065;
+    background-color: #fa9f42;
+  }
+
+  .title, .subtitle{
+    color: #fff;
+    text-align: center;
+    margin: 8px;
+  }

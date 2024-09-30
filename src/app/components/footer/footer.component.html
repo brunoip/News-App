@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="pagination">
+        <a role="button" (click)="selectPage(1)">&laquo;</a>
+        <a class="dots" *ngIf="actualPage>=4">...</a>
+        <a *ngFor="let page of pages"  
+        [ngClass]="page == actualPage ? 'active' : '' " 
+        role="button" (click)="selectPage(page)"> 
+          {{page}}
+        </a>
+        <a class="dots" *ngIf="actualPage<18" >...</a>
+        <a role="button" (click)="selectPage(20)">&raquo;</a>
+    </div>   
+    <p class="author">Bruno Pasquini - 2024</p>    
+ </div>
