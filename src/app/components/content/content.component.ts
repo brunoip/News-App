@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Article } from '../../interfaces/article';
@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './content.component.css',
 })
 
-export class ContentComponent implements OnInit {
+export class ContentComponent implements OnInit, OnDestroy {
   results = {};
   list : Article[];
   filteredList : Article[] = [];
@@ -44,6 +44,7 @@ export class ContentComponent implements OnInit {
       this.renderList();
     });
   }
+
   public renderList () {
     this.isDataLoaded=false;
     this.articleService.getTopStories().subscribe({
@@ -82,6 +83,10 @@ export class ContentComponent implements OnInit {
   
   ngOnInit() {
     this.renderList();
+  }
+
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
   }
 
   public onRowClicked(article: Article) {

@@ -9,12 +9,9 @@ import { Observable, Subject } from 'rxjs';
   
   export class ArticleService {
     
-    //public apiURL: string='https://newsserver20240719092101.azurewebsites.net/api/Article/GetLatest?page=';
-    public apiURL: string= 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty';
     public topStoriesURL: string= 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty';
-   //  public topStoriesURL: 'https://icanhazdadjoke.com';
+    public articleURL: string = 'https://hacker-news.firebaseio.com/v0/item/';
     public actualPage: number=1;
-    url = 'https://icanhazdadjoke.com';
     actualPageChange: Subject<number> = new Subject<number>();
     list: Subject<Article[]>= new Subject<Article[]>();
 
@@ -23,27 +20,17 @@ import { Observable, Subject } from 'rxjs';
       this.actualPage = value
   });}
 
-  getJoke(): Observable<any> {
-    return this.http.get(this.url, { headers: { Accept: 'application/json' } });
-  }
-
   getTopStories() {
     return this.http.get<number[]>(this.topStoriesURL);
   }
 
   getArticle(id: number) {
-    let articleURL= "https://hacker-news.firebaseio.com/v0/item/" + id.toString() + ".json?print=pretty";
-    return this.http.get<Article>(articleURL);
+    let storyURL = this.articleURL + id.toString() + ".json?print=pretty";
+    return this.http.get<Article>(storyURL);
   }
 
-getArticles() {
-      return this.http.get<Article[]>(this.apiURL+this.actualPage.toString());
-    }
-
-    
-
-setPage(page: number) {
-  this.actualPageChange.next(page);
-}
+  setPage(page: number) {
+    this.actualPageChange.next(page);
+  }
 
 }
