@@ -1,8 +1,12 @@
-
-.mat-mdc-list-item:hover{
-    background-color:rgb(205, 205, 205);
-    color: rgba(0, 0, 0, 0.54);
-  }
+.main{
+    flex: 1;
+    overflow: hidden;
+    display: block;
+    min-height: 240px;
+    margin: 0px;
+    padding: 8px;
+    background-color: #efefef;
+}
 
 .material-icons.color_green { 
     color: #ffffff;     
@@ -15,51 +19,39 @@
     margin-left: 0px; 
 }
 
-.mdc-list-item.mdc-list-item--with-two-lines .mdc-list-item__start {
-    align-self: flex-start;
-    margin-top: 0px;
+.iteml-list{
+display: flex;
+padding-top: 6px;
+padding-bottom: 6px;
 }
 
-.mat-mdc-list-item:not(.mat-mdc-list-item-interactive) {
-    cursor: pointer;
-    height: fit-content;
-    margin-bottom: 8px;
+.item-list:hover{
+background-color:rgb(205, 205, 205);
+color: rgba(0, 0, 0, 0.54);
 }
 
-.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines .mdc-list-item__primary-text {
-    display: block;
-    line-height: normal;
-    margin-top: -12px;
+.item-content{
+display: inline-block;
 }
 
-.mat-list-item.active{
-    color: red;
-  }
-
-.itemTitle{
+.item-title{
+    color:rgb(0, 0, 0);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 380px;
+}
+.item-description{
     color:rgb(0, 0, 0)
 }
-.itemDescription{
-    color:rgb(0, 0, 0)
-}
 
-.itemBy{
+.item-by{
     color:rgb(128, 128, 128)
 }
 
 .material-icons.color_white { color: #FFFFFF; }
 
-.main{
-    flex: 1;
-    overflow: hidden;
-    display: block;
-    min-height: 240px;
-    margin: 0px;
-    padding: 8px;
-    background-color: #efefef;
-}
-
-.searchInput{
+.search-input{
     font-size: 16px;
     padding: 2px 8px 2px 8px;
     margin-top: 8px;

@@ -1,4 +1,4 @@
-.container {
+.footer-container {
     padding: 10px;
     color: #405065;
     background-color: #8AD879;
@@ -28,7 +28,6 @@
     color: white;
   }
   
-
   .pagination dots {
     background-color: rgb(53, 133, 239);
     color: linen;
