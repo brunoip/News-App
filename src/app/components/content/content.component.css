@@ -19,19 +19,21 @@
     margin-left: 0px; 
 }
 
-.iteml-list{
-display: flex;
-padding-top: 6px;
-padding-bottom: 6px;
+.item-list{
+    display: flex;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
 .item-list:hover{
-background-color:rgb(205, 205, 205);
-color: rgba(0, 0, 0, 0.54);
+    background-color:rgb(205, 205, 205);
+    color: rgba(0, 0, 0, 0.54);
 }
 
 .item-content{
-display: inline-block;
+    display: flex;
+    flex-direction: column; /* Stack the title and author vertically */
+    max-width: calc(100% - 40px); 
 }
 
 .item-title{
@@ -41,6 +43,11 @@ display: inline-block;
     white-space: nowrap;
     width: 380px;
 }
+
+@media only screen and (max-width : 480px) {
+    .item-title { width: 290px; }
+}
+
 .item-description{
     color:rgb(0, 0, 0)
 }
